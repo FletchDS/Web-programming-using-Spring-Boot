@@ -17,14 +17,6 @@ public class SearchResult {
         return id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getContentType() {
-        return contentType;
-    }
-
     static SearchResult fromSearchable(Searchable searchable){
         return new SearchResult(searchable.getId(),
                 searchable.getName(),
