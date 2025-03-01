@@ -36,6 +36,10 @@ public class StorageService {
         return collection;
     }
 
+    public Optional<Product> getProductById(UUID id){
+        return Optional.ofNullable(productMap.get(id));
+    }
+
     private void setDefaultMaps(){
         Product product1 = new DiscountedProduct(UUID.randomUUID(), "Арбуз", 100, 20);
         Product product2 = new SimpleProduct(UUID.randomUUID(), "Арбузный сок", 200);
