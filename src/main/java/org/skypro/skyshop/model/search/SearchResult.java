@@ -25,7 +25,7 @@ public class SearchResult {
         return contentType;
     }
 
-    static SearchResult fromSearchable(Searchable searchable){
+    public static SearchResult fromSearchable(Searchable searchable){
         return new SearchResult(searchable.getId(),
                 searchable.getName(),
                 searchable.getType());

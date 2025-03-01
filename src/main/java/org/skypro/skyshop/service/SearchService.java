@@ -18,7 +18,7 @@ public class SearchService {
     public Collection<SearchResult> search(String search){
         Collection<SearchResult> result = storageService.getAllSearchables().stream()
                 .filter(i -> i.getSearchTerm().contains(search))
-                .map(i -> new SearchResult(i.getId(), i.getName(), i.getType()))
+                .map(SearchResult::fromSearchable)
                 .collect(Collectors.toCollection(ArrayList::new));
         return result;
     }
