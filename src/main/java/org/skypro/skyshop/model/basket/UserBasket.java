@@ -1,6 +1,9 @@
 package org.skypro.skyshop.model.basket;
 
+import org.skypro.skyshop.model.product.Product;
+
 import java.util.List;
+import java.util.Objects;
 
 public class UserBasket {
     private List<BasketItem> basketItems;
@@ -19,5 +22,18 @@ public class UserBasket {
 
     public Integer getTotal() {
         return total;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserBasket that = (UserBasket) o;
+        return Objects.equals(basketItems, that.basketItems) && Objects.equals(total, that.total);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(basketItems, total);
     }
 }
